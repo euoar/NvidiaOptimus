@@ -1,0 +1,16 @@
+Section "Module"
+  Load "modesetting"
+EndSection
+
+Section "Device"
+  Identifier "nvidia"
+  Driver "nvidia"
+  BusID "PCI:1:0:0"
+  Option "AllowEmptyInitialConfiguration"
+  Option "IgnoreDisplayDevices" "CRT"
+EndSection
+
+Section "Files"
+  ModulePath   "/usr/lib64/nvidia/xorg"
+  ModulePath   "/usr/lib64/xorg/modules"
+EndSection
