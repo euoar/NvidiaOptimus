@@ -5,7 +5,7 @@ all: install
 install:
 	cp xorg.conf.template /etc/X11/xorg.conf
 	
-	#for nvidia
+	#for gdm
 	cp gmd_display_setup.desktop /usr/share/gdm/greeter/autostart/gmd_display_setup.desktop
 	cp nvidia-optimus.sh /etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
 	chmod +x /etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
