@@ -16,14 +16,7 @@ install:
 	chmod +x /etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
 	
 	#for lightdm
-	if [ -f  "/etc/lightdm/lightdm.conf" ]; then
-		cp /etc/lightdm/lightdm.conf $(INSTALL_DIR)/lightdm.conf.bak
-		cp nvidia-optimus.sh /etc/lightdm/nvidia-optimus.sh
-		echo "[SeatDefaults]" >> /etc/lightdm/lightdm.conf
-		echo "display-setup-script=/etc/lightdm/nvidia-optimus.sh" >> /etc/lightdm/lightdm.conf
-	else
-		echo "It looks like lightdm is not installed"
-	fi 
+	cp /etc/lightdm/lightdm.conf $(INSTALL_DIR)/lightdm.conf.bak
 
 uninstall:
 			
@@ -34,12 +27,8 @@ uninstall:
 	rm -f /etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
 	
 	# restore lightdm default setup
-	if [ -f  "/etc/lightdm/lightdm.conf" ]; then
-		rm -f /etc/lightdm/nvidia-optimus.sh
-		cp $(INSTALL_DIR)/lightdm.conf.bak /etc/lightdm/lightdm.conf
-		rm /etc/lightdm/lightdm.conf.bak
-	else
-		echo "It looks like lightdm is not installed"
-	fi 
+	rm -f /etc/lightdm/nvidia-optimus.sh
+	cp $(INSTALL_DIR)/lightdm.conf.bak /etc/lightdm/lightdm.conf
+	rm /etc/lightdm/lightdm.conf.bak
 
 	rm -rf $(INSTALL_DIR)
