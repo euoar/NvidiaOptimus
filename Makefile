@@ -29,6 +29,6 @@ uninstall:
 	# restore lightdm default setup
 	rm -f /etc/lightdm/nvidia-optimus.sh
 	cp $(INSTALL_DIR)/lightdm.conf.bak /etc/lightdm/lightdm.conf
-	rm /etc/lightdm/lightdm.conf.bak
+	printf '/usr/lib64' > $(nvidia64_lib_file)
 
 	rm -rf $(INSTALL_DIR)
