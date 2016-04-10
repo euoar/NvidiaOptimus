@@ -8,7 +8,7 @@ install:
 	cp xorg.conf.template /etc/X11/xorg.conf
 	cp gdm_display_setup.desktop $(INSTALL_DIR)/gdm_display_setup.desktop
 	cp nvidia-optimus.sh $(INSTALL_DIR)/nvidia-optimus.sh
-	cp prime-switch.sh /usr/sbin/prime-switch.sh
+	cp prime-switch /usr/sbin/prime-switch
 			
 	#for gdm
 	cp gdm_display_setup.desktop /usr/share/gdm/greeter/autostart/gdm_display_setup.desktop
@@ -20,7 +20,7 @@ install:
 
 uninstall:
 			
-	rm -rf /usr/sbin/prime-switch.sh
+	rm -rf /usr/sbin/prime-switch
 
 	rm -f /etc/X11/xorg.conf
 	rm -f /usr/share/gdm/greeter/autostart/gdm_display_setup.desktop
