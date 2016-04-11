@@ -9,6 +9,7 @@ install:
 	cp ./gdm_display_setup.desktop $(INSTALL_DIR)/gdm_display_setup.desktop
 	cp ./nvidia-optimus.sh $(INSTALL_DIR)/nvidia-optimus.sh
 	cp ./prime-switch /usr/sbin/prime-switch
+	chmod +x /usr/sbin/prime-switch
 			
 
 uninstall:
