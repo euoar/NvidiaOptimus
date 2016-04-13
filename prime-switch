@@ -5,12 +5,12 @@ set -e
 INSTALL_DIR='/etc/prime-switch' 
 # library config
 nvidia64_lib_file='/etc/ld.so.conf.d/nvidia-lib64.conf'
-
-
+nvidia_lib_file='/etc/ld.so.conf.d/nvidia-lib.conf'
 
 if [ $1 == "nvidia" ]; then
 	echo "nvidia"
 	printf '/usr/lib64/nvidia' > $nvidia64_lib_file
+	printf '/usr/lib/nvidia' > $nvidia_lib_file
 	
 	# write needed files
 	cp $INSTALL_DIR/xorg.conf.template /etc/X11/xorg.conf 
